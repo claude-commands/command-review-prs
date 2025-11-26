@@ -14,7 +14,7 @@ ln -s <clone-path>/command-review-prs/review-prs.md ~/.claude/commands/review-pr
 
 ## Usage
 
-```
+```text
 /review-prs              # All PRs needing your review
 /review-prs --team       # PRs for your team
 /review-prs --stale      # PRs waiting >3 days
@@ -33,6 +33,7 @@ ln -s <clone-path>/command-review-prs/review-prs.md ~/.claude/commands/review-pr
 ## Output Format
 
 ### PR List
+
 ```markdown
 # PRs Awaiting Your Review
 
@@ -46,6 +47,7 @@ ln -s <clone-path>/command-review-prs/review-prs.md ~/.claude/commands/review-pr
 ```
 
 ### Deep Review
+
 ```markdown
 # Deep Review: PR #234
 

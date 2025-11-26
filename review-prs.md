@@ -12,12 +12,14 @@ List and summarize all PRs that need your review.
 **Usage:** `/review-prs [filter]`
 
 **Examples:**
+
 - `/review-prs` - All PRs needing your review
 - `/review-prs --team` - PRs for your team
 - `/review-prs --stale` - PRs waiting >3 days
 - `/review-prs 123` - Deep review of specific PR
 
 **Workflow:**
+
 1. Fetch PRs assigned for review
 2. Analyze changes and generate summaries
 3. Identify potential issues
@@ -51,7 +53,7 @@ Filter PRs or perform deep review of specific PR.
 
    # Also check team review requests
    gh pr list --search "team-review-requested:@me" --json number,title,author,createdAt,url
-   ```
+   ```text
 
    Collect:
    - PR number and title
@@ -92,7 +94,7 @@ Filter PRs or perform deep review of specific PR.
 
    # Get diff
    gh pr diff <number>
-   ```
+   ```text
 
    Create summary:
    - What the PR does (1-2 sentences)
@@ -111,13 +113,14 @@ Filter PRs or perform deep review of specific PR.
    - Review commit history
 
    **b. Analyze changes**
+
    ```bash
    # Get changed files
    gh pr view <number> --json files | jq '.files[].path'
 
    # Get full diff
    gh pr diff <number>
-   ```
+   ```text
 
    **c. Code review checklist**
    - Logic correctness
@@ -138,7 +141,7 @@ Filter PRs or perform deep review of specific PR.
 
    ```bash
    gh pr checks <number>
-   ```
+   ```text
 
    Flag:
    - Failing checks (blockers)
@@ -216,7 +219,7 @@ Filter PRs or perform deep review of specific PR.
    1. **Approve now**: PR #456 (security), #567 (deps)
    2. **Review today**: PR #234 (waiting 4 days)
    3. **Schedule time**: PR #345 (medium complexity)
-   ```
+   ```text
 
 7. **Deep Review Output (for specific PR)**
 
@@ -263,10 +266,12 @@ Filter PRs or perform deep review of specific PR.
 
    // Suggested: Memoize expensive calculation
    const stats = useMemo(() => calculateStats(data), [data]);
-   ```
+   ```text
 
    #### 2. Error Handling (High)
+
    **File**: `src/api/dashboard.ts:23`
+
    ```typescript
    // Current: No error handling
    const data = await fetch('/api/dashboard');
@@ -278,9 +283,10 @@ Filter PRs or perform deep review of specific PR.
    } catch (error) {
      // Handle error
    }
-   ```
+   ```text
 
    #### 3. Missing Tests
+
    - No tests for Analytics component
    - No tests for error states
    - No tests for loading states
@@ -301,7 +307,8 @@ Filter PRs or perform deep review of specific PR.
    - [ ] Performance optimization for stats calculation
 
    Once addressed, this should be ready to merge.
-   ```
+
+   ```text
 
 8. **Quick Actions**
 
@@ -319,7 +326,7 @@ Filter PRs or perform deep review of specific PR.
 
    # Merge when ready
    gh pr merge <number> --squash
-   ```
+   ```text
 
 ## Output Structure
 
@@ -337,7 +344,7 @@ Filter PRs or perform deep review of specific PR.
 
 ## Recommended Actions
 [What to do next]
-```
+```text
 
 ## For Deep Review
 
@@ -355,7 +362,7 @@ Filter PRs or perform deep review of specific PR.
 
 ## Verdict
 [Approve/Request Changes/Comment]
-```
+```text
 
 ## Notes
 
